@@ -84,9 +84,9 @@ def load_subaddresses(
                 yield current_id_start, result
             current_id_start[-1] += 1
             while current_id_start[-1] == 10:
+                current_id_start.pop(-1)
                 if len(current_id_start) <= min_id_start_length:
                     return
-                current_id_start.pop(-1)
                 current_id_start[-1] += 1
         else:
             current_id_start.append(0)
