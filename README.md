@@ -1,6 +1,6 @@
 # `rosreestr_loader`
 
-This is script to load data (addresses, coordinates, cadastre IDs, etc) from [Federal service of state registration cadastre and cartography](https://rosreestr.ru/) using API.
+This is script to load data (addresses, cadastre IDs, etc) from [Federal service of state registration cadastre and cartography](https://rosreestr.ru/) using API.
 
 ## Installation
 
