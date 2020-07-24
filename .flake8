@@ -1,5 +1,7 @@
 [flake8]
 exclude =
     .git,
-    __pycache__
-max-annotations-complexity=5
+    __pycache__,
+    .venv
+ignore = I900, W503
+max-annotations-complexity = 5

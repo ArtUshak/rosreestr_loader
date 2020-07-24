@@ -9,6 +9,8 @@ from typing import Any, Dict, Iterator, List, Tuple
 import click
 import requests
 
+from utils import check_is_list_of_dicts
+
 API_URL_BASE = 'https://rosreestr.ru/api/online/fir_objects'
 API_URL_ADDRESS_WILDCARD = API_URL_BASE + '/{id_str}*'
 API_LIMIT = 200
@@ -22,16 +24,6 @@ def get_id_str(cadastre_id: List[int]) -> str:
             result += ':'
         result += str(cadastre_id[i])
     return result
-
-
-def check_is_list_of_dicts(x: Any) -> List[Dict[Any, Any]]:
-    """Return `x` if it is `List[Dict[Any, Any]]`, raise `ValueError`."""
-    if not isinstance(x, list):
-        raise ValueError()
-    for element in x:
-        if not isinstance(element, dict):
-            raise ValueError()
-    return x
 
 
 def try_request(id_start: List[int]) -> List[Dict[Any, Any]]:
