@@ -26,7 +26,7 @@ poetry run python ./rosreestr_loader/rosreestr_loader.py START_ID OUTPUT_DIRECTO
 
 Where `START_ID` is first digits of IDs to begin loading with, `OUTPUT_DIRECTORY` is directory to save result files.
 
-On each request, if there are less entries returned then maximum API limit (200), those entries will be saved to separate file in JSON format. If count of entries is equal to or more than maximum API limit, more narrow requests will be performed. When all data for given subregion is loaded, program quits (subregion is defined by first 4 digits of IDs, for example `50:12` means: Moscow Region, [Mytischi city district](https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D1%80%D0%BE%D0%B4%D1%81%D0%BA%D0%BE%D0%B9_%D0%BE%D0%BA%D1%80%D1%83%D0%B3_%D0%9C%D1%8B%D1%82%D0%B8%D1%89%D0%B8)).
+On each request, if there are less entries returned than maximum API limit (200), those entries will be saved to separate file in JSON format. If count of entries is equal to or more than maximum API limit, more narrow requests will be performed. When all data for given subregion is loaded, program quits (subregion is defined by first 4 digits of IDs, for example `50:12` means: Moscow Region, [Mytischi city district](https://ru.wikipedia.org/wiki/%D0%93%D0%BE%D1%80%D0%BE%D0%B4%D1%81%D0%BA%D0%BE%D0%B9_%D0%BE%D0%BA%D1%80%D1%83%D0%B3_%D0%9C%D1%8B%D1%82%D0%B8%D1%89%D0%B8)).
 
 Example (not program output, just description of program execution):
 
