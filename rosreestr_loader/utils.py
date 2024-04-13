@@ -1,9 +1,9 @@
 """Utilitary functions for scripts."""
-from typing import Any, Dict, List
+from typing import Dict, List
 
 
-def check_is_list_of_dicts(x: Any) -> List[Dict[Any, Any]]:
-    """Return `x` if it is `List[Dict[Any, Any]]`, raise `ValueError`."""
+def check_is_list_of_dicts(x: object) -> List[Dict[object, object]]:
+    """Return `x` if it is `List[Dict[object, object]]`, raise `ValueError`."""
     if not isinstance(x, list):
         raise ValueError()
     for element in x:

@@ -4,7 +4,7 @@
 import json
 import os
 import pathlib
-from typing import Any, Dict, TextIO
+from typing import Dict, TextIO
 
 import click
 
@@ -26,7 +26,7 @@ def merge_addresses(
     """Merge JSON files with addresses by `objectCn` field."""
     input_directory_path = pathlib.Path(input_directory)
 
-    result: Dict[str, Dict[Any, Any]] = {}
+    result: Dict[str, Dict[object, object]] = {}
     duplicate_entries = 0
 
     with (

@@ -4,7 +4,7 @@
 import copy
 import json
 import pathlib
-from typing import Any, Dict, Iterator, List, Tuple
+from typing import Dict, Iterator, List, Tuple
 
 import click
 import requests
@@ -26,7 +26,7 @@ def get_id_str(cadastre_id: List[int]) -> str:
     return result
 
 
-def try_request(id_start: List[int]) -> List[Dict[Any, Any]]:
+def try_request(id_start: List[int]) -> List[Dict[object, object]]:
     """Perform request to API."""
     id_str: str = get_id_str(id_start)
     request_url: str = API_URL_ADDRESS_WILDCARD.format(id_str=id_str)
@@ -40,7 +40,7 @@ def try_request(id_start: List[int]) -> List[Dict[Any, Any]]:
 def load_subaddresses(
     id_start: List[int], limit: int,
     min_id_start_length: int
-) -> Iterator[Tuple[List[int], List[Dict[Any, Any]]]]:
+) -> Iterator[Tuple[List[int], List[Dict[object, object]]]]:
     """
     Load addresses with cadastre IDs starting from `id_start`.
 
@@ -69,7 +69,7 @@ def load_subaddresses(
     current_id_start: List[int] = copy.copy(id_start)
 
     while True:
-        result: List[Dict[str, Any]] = try_request(current_id_start)
+        result: List[Dict[str, object]] = try_request(current_id_start)
 
         if len(result) < limit:
             if len(result) > 0:
